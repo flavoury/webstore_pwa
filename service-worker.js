@@ -1,15 +1,16 @@
 var cacheName = 'petstore-v1';
-var cacheFiles = 
-[
+var cacheFiles = [
     'index.html',
-    'product.js',
+    'products.js',
     'petstore.webmanifest',
     'images/yarn.jpg',
     'images/cat-litter.jpg',
     'images/laser-pointer.jpg',
     'images/cat-house.jpg',
-    'images/icon-store-512.png'  
+    'images/icon-store-512.png'
+    
 ];
+
 self.addEventListener('install', (e) => {
     console.log('[Service Worker] Install');
     e.waitUntil(
@@ -20,16 +21,16 @@ self.addEventListener('install', (e) => {
     );
 });
 
-self.addEventListener('fetch', function (e) {
-    e.respondWith(
-        // check if the cache has the file
-        caches.match(e.request).then(function (r) {
-            console.log('[Service Worker] Fetching resource: ' + e.request.url);
-            // 'r' is the matching file if it exists in the cache
-            return r 
-        })
-    );
-});
+// self.addEventListener('fetch', function (e) {
+//     e.respondWith(
+//         // check if the cache has the file
+//         caches.match(e.request).then(function (r) {
+//             console.log('[Service Worker] Fetching resource: ' + e.request.url);
+//             // 'r' is the matching file if it exists in the cache
+//             return r 
+//         })
+//     );
+// });
 
 self.addEventListener('fetch', function (e) {
     e.respondWith(
