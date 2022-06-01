@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <title>Vue.js After School</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="products.js"></script>
+    <link rel="manifest" href="petstore1.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+ 
+</head>
+
+<body>
+    <style>
+        .product{
+        border: 1px grey solid;
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+    }  
+     </style>
+    <div id="app" >
+       <main>
+           
+        <div><div class="product">
+            <h2>Yarn</h2> 
+            <figure>
+                <img src="images/icon-512.png" 
+                class="product-img">
+            </figure> 
+            <p>Yarn your cat can play with for a very 
+            <strong>long</strong> time!</p> 
+            <p>Price: 2.99</p> 
+            <p>Available stock: 7</p> 
+            <button>Add to cart</button> 
+            <span>Buy now!</span> 
+            <div><span>★</span>
+            <span>★</span>
+            <span>★</span> 
+            <span>☆</span>
+            <span>☆</span></div>
+     </div>
+     <div class="product">
+         <h2>Cat House</h2> 
+         <figure><img src="images/icon-512.png" class="product-img"></figure> 
+         <p>A place for your cat to play!</p> <p>Price: 7.99</p>
+          <p>Available stock: 11</p> 
+          <button>Add to cart</button> 
+          <span>Buy now!</span> 
+          <div>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span> 
+            </div>
+        </div>
+        <div class="product">
+            <h2>Kitty Litter</h2> 
+            <figure>
+                <img src="images/icon-512.png" class="product-img">
+            </figure> <p>Premium kitty litter for your cat.</p>
+             <p>Price: 11</p> 
+             <p>Available stock: 99</p>
+            <button>Add to cart</button> 
+            <span>Buy now!</span> 
+            <div>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span> 
+            <span>☆</span>
+        </div></div>
+        <div class="product">
+            <h2>Laser Pointer</h2> 
+            <figure><img src="images/icon-512.png" class="product-img">
+            </figure>
+             <p>Drive your cat crazy with this <em>amazing</em> product.</p> 
+             <p>Price: 49.99</p> <p>Available stock: 25</p> 
+             <button>Add to cart</button> 
+             <span>Buy now!</span> 
+             <div>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span> 
+            <span>☆</span>
+        </div>
+    </div>
+</div>
+        </main>
+    </div>
+<script>
+    if('serviceWorker'in navigator) 
+    {    navigator.serviceWorker.register('service-worker.js');
+    };
+</script>
+        <script type="text/javascript">
+        var webstore = new Vue({
+            el: '#app',
+            data: {
+                
+                products: products,
+                cart: [],
+            
+                
+                
+        },
+        methods: 
+    {
+        addToCart(product) 
+        {
+            this.cart.push(product.id);        
+        },        
+        },
+        computed: 
+        {
+            sortedProducts() 
+            {}         
+},    
+});
+    </script>
+                 
+</body>
+
+</html>
